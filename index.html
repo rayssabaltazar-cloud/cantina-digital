@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fila Inteligente da Cantina</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- LOGIN -->
+<section id="login" class="login" hidden>
+  <div class="login-card">
+    <div class="logo">🍔⏱️</div>
+    <h1>Fila Inteligente da Cantina</h1>
+    <p class="slogan">Seu lanche, sem filas e sem complicação!</p>
+    <div class="tabs" role="tablist">
+      <button type="button" class="tab on" data-act="role" data-v="aluno" role="tab">Aluno</button>
+      <button type="button" class="tab" data-act="role" data-v="admin" role="tab">Administrador</button>
+    </div>
+    <form id="loginForm" novalidate>
+      <label for="uName">Nome</label>
+      <input id="uName" autocomplete="off" placeholder="Seu nome">
+      <label for="uPass">Senha</label>
+      <input id="uPass" type="password" placeholder="Senha">
+      <p id="loginErr" class="err" role="alert"></p>
+      <button class="btn big" type="submit">Entrar</button>
+    </form>
+    <p class="hint" id="loginHint">Senha demonstrativa do aluno: <b>123</b></p>
+    <p class="hint">Projeto escolar demonstrativo. Dados fictícios, sem autenticação real.</p>
+  </div>
+</section>
+
+<!-- APLICATIVO -->
+<div id="app" hidden>
+  <header class="top">
+    <div class="brand">🍔 <span>Fila Inteligente</span></div>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav id="nav" aria-label="Menu principal"></nav>
+    <div class="user"><span id="who"></span><button class="btn ghost" data-act="logout">Sair</button></div>
+  </header>
+  <main id="view" tabindex="-1"></main>
+  <footer>Versão demonstrativa: os dados ficam salvos só neste navegador (localStorage) e não sincronizam entre dispositivos.</footer>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
